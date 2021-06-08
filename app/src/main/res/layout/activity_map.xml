@@ -30,4 +30,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn_current_place"
         android:text="Current Place Activity"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_place_map"
+        android:text="Place Map Activity"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_latLng"
+        android:text="Get LatLing Activity"/>
 </LinearLayout>

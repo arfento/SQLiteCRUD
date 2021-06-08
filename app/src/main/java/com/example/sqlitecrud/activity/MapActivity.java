@@ -17,7 +17,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 
 public class MapActivity extends AppCompatActivity {
 
-    Button btnOjek, btnPlaceAutoComplete, btnDirection, btnMapMarker,btnCurrentPlace;
+    Button btnOjek, btnPlaceAutoComplete, btnDirection, btnMapMarker,btnCurrentPlace, btnPlaceMap, btnLatlng;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +49,8 @@ public class MapActivity extends AppCompatActivity {
         openOjek();
         openMapMarker();
         openCurrentPlace();
+        openPlaceMap();
+        openLatlng();
     }
 
 
@@ -62,6 +64,17 @@ public class MapActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentOjek = new Intent(MapActivity.this, OjekActivity.class);
                 startActivity(intentOjek);
+
+            }
+        });
+    }
+    public void openPlaceMap(){
+        btnPlaceMap= (Button)findViewById(R.id.btn_place_map);
+        btnPlaceMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentPlaceMap = new Intent(MapActivity.this, PlaceActivity.class);
+                startActivity(intentPlaceMap);
 
             }
         });
@@ -106,6 +119,17 @@ public class MapActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentCurrentPlace = new Intent(MapActivity.this, CurrentPlaceActivity.class);
                 startActivity(intentCurrentPlace);
+
+            }
+        });
+    }
+    public void openLatlng(){
+        btnLatlng= (Button)findViewById(R.id.btn_latLng);
+        btnLatlng.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentLatling = new Intent(MapActivity.this, LatlngActivity.class);
+                startActivity(intentLatling);
 
             }
         });
