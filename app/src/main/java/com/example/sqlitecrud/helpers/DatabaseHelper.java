@@ -48,7 +48,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             MAP_USERNAME + " TEXT NOT NULL, " +
             MAP_LATITUDE + " TEXT NOT NULL, " +
-            MAP_LONGITUDE + " TEXT NOT NULL, " +
+            MAP_LONGITUDE + " TEXT NOT NULL " +
             "); ";
 
     public DatabaseHelper(Context context) {
@@ -166,7 +166,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.update(TABLE_USER, values, KEY_ID + " = ?",
                 new String[]{String.valueOf(id)});
     }
-    public int updateTeachers(int id, String username, String latitude, String longitude) {
+    public int updateMap(int id, String username, String latitude, String longitude) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         // Creating content values

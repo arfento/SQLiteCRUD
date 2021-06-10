@@ -14,6 +14,7 @@ import android.widget.ListView;;
 
 import com.example.sqlitecrud.R;
 import com.example.sqlitecrud.adapter.CustomAdapterTeacher;
+import com.example.sqlitecrud.food.FoodActivity;
 import com.example.sqlitecrud.helpers.DatabaseHelper;
 import com.example.sqlitecrud.model.TeachersModel;
 
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     Button modTeachers;
     Button btnHistory;
     Button btnOpenMap;
+    Button btnCameraMap;
+    Button btnFood;
 
     private ListView listView;
     private ArrayList<TeachersModel> teachersModelArrayList;
@@ -49,6 +52,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentOpenMap = new Intent(MainActivity.this, MapActivity.class);
                 startActivity(intentOpenMap);
+
+            }
+        });
+    }
+    public  void openCameraActivity(){
+        btnCameraMap= (Button)findViewById(R.id.btn_camera);
+        btnCameraMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentCamera = new Intent(MainActivity.this, MemoryActivity.class);
+                startActivity(intentCamera);
 
             }
         });
@@ -79,6 +93,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    public void openFood(){
+        btnFood= (Button)findViewById(R.id.btn_food);
+        btnFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentFood = new Intent(MainActivity.this, FoodActivity.class);
+                startActivity(intentFood);
+
+            }
+        });
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +114,8 @@ public class MainActivity extends AppCompatActivity {
         modTeachersActivity();
         btnHistoryActivity();
         openMapActivity();
+        openCameraActivity();
+        openFood();
 
 
         listView = (ListView) findViewById(R.id.teachers_lv);

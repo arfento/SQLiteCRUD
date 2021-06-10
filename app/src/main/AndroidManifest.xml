@@ -11,7 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SQLiteCRUD"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.CameraActivity"></activity>
+        <activity android:name=".activity.UpdateMemoryActivity"></activity>
+        <activity android:name=".activity.NewMemoryActivity" />
+        <activity android:name=".activity.MemoryActivity" />
+        <activity android:name=".food.FoodListActivity" />
+        <activity android:name=".food.FoodActivity" />
+        <activity android:name=".activity.CameraActivity" />
         <activity android:name=".activity.LatlngActivity" />
         <activity android:name=".activity.PlaceMapActivity" />
         <activity android:name=".activity.PlaceActivity" />
@@ -40,10 +45,18 @@
 
         <service android:name=".activity.FetchAddressIntentService" />
     </application>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <uses-permission android:name="android.permission.INTERNET" />
 
